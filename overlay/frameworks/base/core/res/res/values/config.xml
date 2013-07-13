@@ -196,7 +196,10 @@ should be empty. -->
     <bool name="config_symKeyShowsImePicker">false</bool>
     <!-- Values greater or equal to 0 will enable electronbeam screen-on
          animation with the specified delay (in milliseconds), -1 will disable the animation -->
+<add-resource type="integer" name="config_screenOnAnimation">         
     <integer name="config_screenOnAnimation">0</integer>
+</add-resource>
+
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- The standard AOSP fused location provider -->
         <item>com.android.location.fused</item>
@@ -205,5 +208,5 @@ should be empty. -->
     </string-array>
 
     <!-- Disable software HDR on non-hw HDR devices -->
-    <bool name="disableSoftwareHDR">true</bool>
+<add-resource type="bool" name="disableSoftwareHDR">true</add-resource>
 </resources> 
