@@ -49,7 +49,7 @@ char const*const KEYBOARD_FILE = "/sys/class/leds/keyboard-backlight/brightness"
 char const*const LCD_BACKLIGHT_FILE = "/sys/class/leds/lcd-backlight/brightness";
 
 #ifdef SHAREKEY
-char const*const SHAREKEY_FILE = "/sys/class/leds/sharekey/brightness";
+char const*const SHAREKEY_LED_FILE = "/sys/class/leds/sharekey/brightness";
 #endif
 char const*const AMBER_BLINK_FILE = "/sys/class/leds/amber/blink";
 char const*const GREEN_BLINK_FILE = "/sys/class/leds/green/blink";
@@ -221,7 +221,7 @@ static int set_light_buttons (struct light_device_t* dev,
 	pthread_mutex_lock (&g_lock);
 	err = write_int (BUTTON_FILE, on?255:0);
 #ifdef SHAREKEY
-  err = write_int (SHAREKEY_FILE, on?255:0);
+  err = write_int (SHAREKEY_LED_FILE, on?255:0);
 #endif 
 	pthread_mutex_unlock (&g_lock);
 
